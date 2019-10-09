@@ -1,6 +1,0 @@
-name: ps-app-ui
-namespace: ps-app-ui
-version: 0.0.1
-description: Webserver for ps-app-ui
-home: https://github.wdf.sap.corp:D066567/ps-app-ui
-engine: gotpl
