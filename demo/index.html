@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+
+    <title>[DEV] Patient Summary</title>
+
+    <script id="sap-ui-bootstrap"
+        src="/sap/ui5/1/resources/sap-ui-core.js"
+        data-sap-ui-libs="sap.ui.core, sap.m"
+        data-sap-ui-theme="sap_bluecrystal"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-preload="async"
+        data-sap-ui-resourceroots='{"ps.app.ui": "/ps/app/ui"}'>
+    </script>
+
+    <script>
+        sap.ui.getCore().attachInit(function() {
+            sap.ui.require([
+                "jquery.sap.global",
+                "sap/m/Button",
+                "sap/m/MessageToast",
+                "sap/m/OverflowToolbar",
+                "sap/m/Page",
+                "sap/m/Shell",
+                "sap/m/ToolbarSpacer",
+                "sap/ui/core/ComponentContainer"
+            ], function(jQuery, Button, MessageToast, OverflowToolbar, Page, Shell, ToolbarSpacer, ComponentContainer) {
+                "use strict";                
+
+                var init = function () {
+                    var oURIParams = jQuery.sap.getUriParameters();
+                    var mParams = oURIParams.mParams || {};
+                    var pid = "7";
+                    if (Array.isArray(mParams.pid) && mParams.pid.length >= 0) {
+                        pid = mParams.pid[0];
+                    }
+                    var oComp = sap.ui.getCore().createComponent({
+                        name: "ps.app.ui",
+                        id: "Example",
+                        settings: {
+                            showHeader: true,
+                            patientId: pid
+                        }
+                    });
+                    oComp.attachConfigSelectionFailed(function () {
+                        alert("Config Selection Failed");
+                    });
+                    oComp.attachPatientNotFound(function () {
+                        alert("Patient not found");
+                    });
+                    oComp.attachTabChange(function (oEvent) {
+                        var sTab = oEvent.getParameter("tab");
+                        console.log("Received Event: urlChange; Now showing tab \"" + sTab + "\"");
+                    });
+                    oComp.attachBeforeDataLoad(function () {
+                        console.log("Received Event: beforeDataLoad");
+                    });
+                    oComp.attachAfterDataLoad(function () {
+                        console.log("Received Event: afterDataLoad");
+                    });
+                    oComp.attachNavigationTargetChange(function (oEvent) {
+                        var sNavTarget = oEvent.getParameter("navTarget");
+                        var vValue = oEvent.getParameter("value");
+                        console.log("Received Event: navigationTargetChanged; \"" + sNavTarget + "\" = \"" + vValue + "\"");
+                    });
+
+                    var oConfigSelectionButton = new Button({
+                        text: "Change Config",
+                        press: function () {
+                            oComp.openConfigSelectionDialog();
+                        }
+                    });
+                    oConfigSelectionButton.placeAt("content");
+                    var oResetSettingsButton = new Button({
+                        text: "Reset Settings",
+                        press: function () {
+                            oComp.resetSettings();
+                        }
+                    });
+                    oResetSettingsButton.placeAt("content");
+                    var oPage = new Page({
+                        height: "100%",
+                        content: new sap.ui.core.ComponentContainer("PSContainer", {
+                            component: oComp
+                        }),
+                        footer: new OverflowToolbar({
+                            content: [oResetSettingsButton, new ToolbarSpacer(), oConfigSelectionButton]
+                        }),
+                        showHeader: false
+                    })
+                    new Shell({
+                        app: oPage
+                    }).placeAt("content");
+
+                };
+
+                MessageToast.show("Running with mock data.");
+
+                init();
+            });
+        });
+    </script>
+</head>
+
+<body class="sapUiBody" id="content"></body>
+</html>

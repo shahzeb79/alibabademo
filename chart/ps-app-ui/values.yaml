@@ -1,0 +1,25 @@
+global:
+  imageRegistry: "d066567"
+
+image:
+  repository: "ps-app-ui"
+  tag: "0.1"
+  pullPolicy: "Always"
+
+replicaCount: 1
+servicePort: 80
+servicePort1: 81
+servicePort2: 82
+containerPort: 8000
+containerPort1: 8001
+containerPort2: 8765
+containerPort3: 8766
+# Override base paths in a little bit hacky way
+# basePath should end with a slash
+basePath: /ps/app/ui/
+# apiBasePath should not end with a slash
+# apiBasePath: /ps/app/ui/v1
+# psApp@123
+mappingName: ps-app-ui_mapping
+prefix: /
+ns: development

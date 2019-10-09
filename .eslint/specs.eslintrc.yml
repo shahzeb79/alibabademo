@@ -1,0 +1,11 @@
+# This is the reference file for strict linting of frontend test files.
+# It should be referenced in an ".eslintrc" in any "tests/ui" directory.
+---
+  extends: ./src.eslintrc.yml
+  env:
+    qunit: true # QUnit global variables
+  globals:
+    assert: false # Used by OPA
+    opaTest: true # Used by OPA
+  rules:
+    no-unused-vars: [2, {vars: all, args: none}] # disallow Unused Variables

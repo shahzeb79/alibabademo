@@ -1,0 +1,35 @@
+/**
+ * Mixin function to write one rule for each color.
+ * @param before   Selector string before the color name
+ * @param after    Selector string after the color name
+ * @param property Property that will be assigned the color value
+ */
+
+// Sizes
+@tileHeight: 76px;
+@laneHeightNormal: @tileHeight + 1px;
+@laneHeightMinimized: 30px;
+@laneHeaderExtraContentWidth: 50px;
+@laneHeaderWidth: 250px;
+
+
+// List of available colors
+@predefinedColors: "LightOrange", "LightGreen", "LightGold", "LightPurple", "LightPink", "MediumOrange", "MediumGreen", "MediumGold", "MediumPurple", "MediumPink", "DarkOrange", "DarkGreen", "DarkGold", "DarkPurple", "DarkPink";
+
+#forEachColor(@before:~"", @after:~"", @property, @beforeValue:~"", @afterValue:~"") {
+
+    // Helper function to turn a string into a value variable
+    .stringy(@property, @value) {
+        @{property}: @beforeValue@@value@afterValue;
+    }
+
+    // Loop over color list
+    .-(@i: 1) when (@i <= length(@predefinedColors)) {
+        @name: extract(@predefinedColors, @i);
+        @unquoted: ~"@{name}";
+        @{before}@{unquoted}@{after} {
+            .stringy(@property, "sapPV@{name}");
+        }
+        .-((@i + 1));
+    } .-;
+}

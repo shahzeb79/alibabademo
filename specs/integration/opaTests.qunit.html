@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>OPA5 integrations tests for Patient Summary</title>
+    <script id="sap-ui-bootstrap"
+        src="/sap/ui5/1/resources/sap-ui-core.js"
+        data-sap-ui-libs="sap.ui.core, sap.m, ps.app.ui.lib"
+        data-sap-ui-theme="sap_bluecrystal"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-preload="async"
+        data-sap-ui-resourceroots='{"ps.app.ui": "/ps/app/ui", "ps.specs": "/ps/specs"}'
+        data-sap-ui-frameOptions='deny'>
+    </script>
+
+	<script>
+        jQuery.sap.require("sap.ui.qunit.qunit-css");
+        jQuery.sap.require("sap.ui.thirdparty.qunit");
+        jQuery.sap.require("sap.ui.qunit.qunit-junit");
+        jQuery.sap.require("sap.ui.test.opaQunit");
+
+        QUnit.config.autostart = false;
+
+        sap.ui.getCore().attachInit(function() {
+
+            sap.ui.require([
+                "ps/specs/integration/journeys/AllJourneys"
+            ], function () {
+                QUnit.load();
+                QUnit.start();
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "name": "Launch Patient Summary",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:8000/ps/app/ui/index.html",
+            "pathMapping": {
+                "/ps/app/ui/index.html": "${workspaceRoot}/demo/index.html",
+                "/ps/app/ui/": "${workspaceRoot}/src",
+                "/sap/ui5/1/": "${workspaceRoot}/bower_components/sapui5",
+                "/ps/specs/unit/": "${workspaceRoot}/specs/unit",
+                "/ps/specs/integration/": "${workspaceRoot}/specs/integration"
+            }
+        },
+        {
+            "name": "Launch OPA5 tests",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:8001/ps/specs/integration/opaTests.qunit.html",
+            "pathMapping": {
+                "/ps/app/ui/index.html": "${workspaceRoot}/demo/index.html",
+                "/ps/app/ui/": "${workspaceRoot}/src",
+                "/sap/ui5/1/": "${workspaceRoot}/bower_components/sapui5",
+                "/ps/specs/unit/": "${workspaceRoot}/specs/unit",
+                "/ps/specs/integration/": "${workspaceRoot}/specs/integration"
+            }
+        }
+    ]
+}

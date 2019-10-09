@@ -1,0 +1,48 @@
+{
+  "name": "@sap/ps-app-ui",
+  "version": "0.5.2",
+  "description": "Patient Summary Application UI code",
+  "scripts": {
+    "dev": "grunt localDev",
+    "start": "grunt hostApp",
+    "getUI5": "mvn-install",
+    "lint": "grunt eslint",
+    "test": "npm run unit_test && npm run integration_test",
+    "unit_test": "grunt unit_test",
+    "integration_test": "grunt integration_test",
+    "postinstall": "npm run getUI5",
+    "styles": "grunt styles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.wdf.sap.corp:HCN/ps-app-ui.git"
+  },
+  "author": "",
+  "dependencies": {},
+ "devDependencies": {
+    "eslint": "^3.19.0",
+    "grunt": "^1.0.1",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-qunit": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^19.0.0",
+    "grunt-openui5": "^0.12.0",
+    "http-rewrite-middleware": "^0.1.6",
+    "npm-maven-adapter": "0.1.1",
+    "proxy-middleware": "^0.15.0",
+    "ps_mockserver": "git://github.wdf.sap.corp/I840146/mockserver.git#b2da07f085fadc2381798f86646d7f870bb19cac",
+    "request": "^2.81.0"
+  },
+  "apiDependencies": {
+    "ps-app-svc": "https://github.wdf.sap.corp/raw/HCN/ps-app-svc/master/api/swagger.yml"
+  },
+  "maven": {
+    "repositoryURL": "http://nexus.wdf.sap.corp:8081/nexus/content/groups/build.releases/",
+    "dependencies": {
+      "com.sap.ui5.dist:sapui5-sdk-dist:1.28.42:zip:opt-static": "/bower_components/sapui5/"
+    }
+  }
+}

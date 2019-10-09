@@ -1,0 +1,531 @@
+{
+    "contentType": "application/json",
+    "statusCode": 200,
+    "content": {
+        "meta": {
+            "configName": "DemoPI",
+            "configId": 123
+        },
+        "config": {
+            "masterdata": {
+                "annotations": {
+                    "patient_id": [
+                        "pid"
+                    ],
+                    "date_of_birth": [
+                        "dateOfBirth"
+                    ],
+                    "date_of_death": [
+                        "dateOfDeath"
+                    ]
+                },
+                "title": [
+                    {
+                        "pattern": "{firstName} {lastName}"
+                    }
+                ],
+                "details": [
+                    {
+                        "pattern": "{street}, {city}, {region} {zipcode}"
+                    },
+                    {
+                        "pattern": "DOB: {dateOfBirth}"
+                    }
+                ],
+                "attributes": {
+                    "pid": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "smoker": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "pcount": {
+                        "type": "num",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "nationality": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "cohort": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "firstName": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "lastName": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "street": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "city": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "zipcode": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "region": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "country": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "gender": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "monthOfBirth": {
+                        "type": "num",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "yearOfBirth": {
+                        "type": "num",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "dateOfBirth": {
+                        "type": "time",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "dateOfDeath": {
+                        "type": "time",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "maritalStatus": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "title": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "biomarker": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "packYearsSmoked": {
+                        "type": "num",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "smokingOnset": {
+                        "type": "num",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "smokingOnsetAge": {
+                        "type": "num",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "smokingStopped": {
+                        "type": "num",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    }
+                }
+            },
+            "inspectorOptions": {
+                "overview": {
+                    "visible": true
+                },
+                "tabExtensions": [
+                ]
+            },
+            "lanes": [
+                {
+                    "title": "Observations",
+                    "color": "LightOrange",
+                    "visible": true,
+                    "initiallyFiltered": true,
+                    "laneType": "InteractionLane",
+                    "tilesHidden": false,
+                    "interactions": [
+                        {
+                            "name": "Observation",
+                            "source": "Observation",
+                            "visible": true,
+                            "attributes": [
+                                {
+                                    "name": "Status",
+                                    "id": "status",
+                                    "source": [{
+                                        "path": "status",
+                                        "type": "code"
+                                    }],
+                                    "formatter": {
+                                        "pattern": "{status}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Category",
+                                    "id": "category",
+                                    "source": [{
+                                        "path": "category",
+                                        "type": "CodeableConcept"
+                                    }],
+                                    "formatter": {
+                                        "pattern": "{category}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Code",
+                                    "id": "code",
+                                    "source": [{
+                                        "path": "code",
+                                        "type": "CodeableConcept"
+                                    }],
+                                    "formatter": {
+                                        "pattern": "{code}",
+                                        "values": []
+                                    },
+                                    "firstTileAttribute": true,
+                                    "visible": true,
+                                    "plottable": false,
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Quantity",
+                                    "id": "valueQuantityValue",
+                                    "source": [{
+                                        "path": "valueQuantity.value",
+                                        "type": "decimal"
+                                    }],
+                                    "formatter": {
+                                        "pattern": "{valueQuantity}",
+                                        "values": []
+                                    },
+                                    "secondTileAttribute": true,
+                                    "visible": true,
+                                    "plottable": true,
+                                    "type": "num"
+                                },
+                                {
+                                    "name": "Quantity with Unit",
+                                    "id": "valueQuantity",
+                                    "source": [{
+                                        "path": "valueQuantity",
+                                        "type": "Quantity"
+                                    }],
+                                    "formatter": {
+                                        "pattern": "{valueQuantity}",
+                                        "values": []
+                                    },
+                                    "visible": false,
+                                    "plottable": false,
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Start",
+                                    "id": "start",
+                                    "source": [{
+                                        "path": "effectivePeriod.start",
+                                        "type": "dateTime"
+                                        }, {
+                                        "path": "effectiveDateTime",
+                                        "type": "dateTime"
+                                    }],
+                                    "formatter": {
+                                        "pattern": "{start}",
+                                        "values": []
+                                    },
+                                    "visible": false,
+                                    "plottable": false,
+                                    "type": "time"
+                                },
+                                {
+                                    "name": "End",
+                                    "id": "end",
+                                    "source": [{
+                                        "path": "effectivePeriod.end",
+                                        "type": "dateTime"
+                                        }, {
+                                        "path": "effectiveDateTime",
+                                        "type": "dateTime"
+                                    }],
+                                    "formatter": {
+                                        "pattern": "{end}",
+                                        "values": []
+                                    },
+                                    "visible": false,
+                                    "plottable": false,
+                                    "type": "time"
+                                },
+                                {
+                                    "name": "Performer",
+                                    "id": "performer",
+                                    "source": [{
+                                        "path": "performer",
+                                        "type": "Reference"
+                                    }],
+                                    "formatter": {
+                                        "pattern": "{performer}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Interpretation",
+                                    "id": "interpretation",
+                                    "source": [{
+                                        "path": "interpretation",
+                                        "type": "CodeableConcept"
+                                    }],
+                                    "formatter": {
+                                        "pattern": "{interpretation}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "BodySite",
+                                    "id": "bodySite",
+                                    "source": [{
+                                        "path": "bodySite",
+                                        "type": "CodeableConcept"
+                                    }],
+                                    "formatter": {
+                                        "pattern": "{bodySite}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Method",
+                                    "id": "method",
+                                    "source": [{
+                                        "path": "method",
+                                        "type": "CodeableConcept"
+                                    }],
+                                    "formatter": {
+                                        "pattern": "{method}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Reference range",
+                                    "id": "referenceRange",
+                                    "source": [{
+                                        "path": "referenceRange",
+                                        "type": "BackboneElement",
+                                        "multiple": true,
+                                        "formatter": "referenceRange"
+                                    }],
+                                    "formatter": {
+                                        "pattern": "{referenceRange}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": true,
+                                    "type": "text"
+                                }
+                            ],
+                            "annotations": {
+                                "interaction_end": [
+                                    "end"
+                                ],
+                                "interaction_start": [
+                                    "start"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "Diagnostic Reports",
+                    "color": "LightGreen",
+                    "visible": true,
+                    "initiallyFiltered": true,
+                    "laneType": "InteractionLane",
+                    "tilesHidden": false,
+                    "interactions": []
+                },
+                {
+                    "title": "Medication Administrations",
+                    "color": "LightGold",
+                    "visible": true,
+                    "initiallyFiltered": true,
+                    "laneType": "InteractionLane",
+                    "tilesHidden": false,
+                    "interactions": []
+                },
+                {
+                    "title": "Procedures",
+                    "color": "LightPink",
+                    "visible": true,
+                    "initiallyFiltered": true,
+                    "laneType": "InteractionLane",
+                    "tilesHidden": false,
+                    "interactions": []
+                }
+            ]
+        }
+    }
+}

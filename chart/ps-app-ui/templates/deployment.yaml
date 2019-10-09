@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "fullname" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ default 1 .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+    spec:
+      containers:
+      - name: {{ template "fullname" . }}
+        image: "{{ template "image" . }}"
+        imagePullPolicy: "{{.Values.image.pullPolicy}}"
+        ports:
+          - name: http
+            protocol: TCP
+            containerPort: {{ default 8000 .Values.containerPort }}
+          - name: http1
+            protocol: TCP
+            containerPort: {{ default 8001 .Values.containerPort1 }}
+          - name: http2
+            protocol: TCP
+            containerPort: {{ default 8765 .Values.containerPort2 }}
+          - name: http3
+            protocol: TCP
+            containerPort: {{ default 8766 .Values.containerPort3 }}

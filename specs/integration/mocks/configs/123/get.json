@@ -1,0 +1,531 @@
+{
+    "contentType": "application/json",
+    "statusCode": 200,
+    "content": {
+        "meta": {
+            "configId": 123,
+            "configName": "PSTest"
+        },
+        "config": {
+            "masterdata": {
+                "title": [
+                    {
+                        "pattern": "{firstName} {lastName}"
+                    }
+                ],
+                "details": [
+                    {
+                        "pattern": "{city}"
+                    },
+                    {
+                        "pattern": "{zipcode}"
+                    }
+                ],
+                "attributes": {
+                    "pid": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "dateOfBirth": {
+                        "type": "datetime",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "dateOfDeath": {
+                        "type": "datetime",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "firstName": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "city": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "lastName": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    },
+                    "zipcode": {
+                        "type": "text",
+                        "resource": "Patient",
+                        "source": [
+                            {
+                                "path": "dummy",
+                                "type": "dummy"
+                            }
+                        ]
+                    }
+                },
+                "annotations": {
+                    "patient_id": [
+                        "pid"
+                    ],
+                    "date_of_birth": [
+                        "dateOfBirth"
+                    ],
+                    "date_of_death": [
+                        "dateOfDeath"
+                    ]
+                }
+            },
+            "inspectorOptions": {
+                "overview": {
+                    "visible": true
+                },
+                "tabExtensions": []
+            },
+            "lanes": [
+                {
+                    "title": "Lane 1",
+                    "color": "LightOrange",
+                    "visible": true,
+                    "initiallyFiltered": true,
+                    "laneType": "InteractionLane",
+                    "interactions": [
+                        {
+                            "source": "patient.interactions.Inter1",
+                            "visible": true,
+                            "attributes": [
+                                {
+                                    "id": "id",
+                                    "source": [
+                                        {
+                                            "path": "id",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{id}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "name": "Interaction ID",
+                                    "type": "num"
+                                },
+                                {
+                                    "id": "attr1",
+                                    "source": [
+                                        {
+                                            "path": "attr1",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{attr1} ({calYear})",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "name": "Attr 1 of Inter 1",
+                                    "type": "text"
+                                },
+                                {
+                                    "id": "calYear",
+                                    "source": [
+                                        {
+                                            "path": "calYear",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{calYear}",
+                                        "values": []
+                                    },
+                                    "visible": false,
+                                    "plottable": false,
+                                    "name": "Year",
+                                    "type": "text"
+                                },
+                                {
+                                    "id": "end",
+                                    "source": [
+                                        {
+                                            "path": "end",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{end}",
+                                        "values": []
+                                    },
+                                    "visible": false,
+                                    "plottable": false,
+                                    "name": "End",
+                                    "type": "datetime"
+                                },
+                                {
+                                    "id": "start",
+                                    "source": [
+                                        {
+                                            "path": "start",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{start}",
+                                        "values": []
+                                    },
+                                    "visible": false,
+                                    "plottable": false,
+                                    "name": "Start",
+                                    "type": "datetime"
+                                }
+                            ],
+                            "name": "Inter 1",
+                            "annotations": {
+                                "interaction_end": [
+                                    "end"
+                                ],
+                                "interaction_start": [
+                                    "start"
+                                ]
+                            }
+                        }
+                    ],
+                    "tilesHidden": false
+                },
+                {
+                    "title": "Lane 2",
+                    "color": "LightGreen",
+                    "visible": true,
+                    "initiallyFiltered": true,
+                    "laneType": "InteractionLane",
+                    "interactions": [
+                        {
+                            "source": "patient.interactions.Inter2",
+                            "visible": true,
+                            "attributes": [
+                                {
+                                    "id": "id",
+                                    "source": [
+                                        {
+                                            "path": "id",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{id}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "name": "Interaction ID",
+                                    "type": "num"
+                                },
+                                {
+                                    "id": "attr1",
+                                    "source": [
+                                        {
+                                            "path": "attr1",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{attr1}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": true,
+                                    "name": "Attr 1 of Inter 2",
+                                    "type": "num"
+                                },
+                                {
+                                    "id": "attr2",
+                                    "source": [
+                                        {
+                                            "path": "attr2",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{attr2}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "name": "Attr 2 of Inter 2",
+                                    "type": "text"
+                                },
+                                {
+                                    "id": "end",
+                                    "source": [
+                                        {
+                                            "path": "end",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{end}",
+                                        "values": []
+                                    },
+                                    "visible": false,
+                                    "plottable": false,
+                                    "name": "End",
+                                    "type": "datetime"
+                                },
+                                {
+                                    "id": "start",
+                                    "source": [
+                                        {
+                                            "path": "start",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{start}",
+                                        "values": []
+                                    },
+                                    "visible": false,
+                                    "plottable": false,
+                                    "name": "Start",
+                                    "type": "datetime"
+                                }
+                            ],
+                            "name": "Inter 2",
+                            "annotations": {
+                                "interaction_end": [
+                                    "end"
+                                ],
+                                "interaction_start": [
+                                    "start"
+                                ]
+                            }
+                        }
+                    ],
+                    "tilesHidden": true
+                },
+                {
+                    "title": "Lane 3",
+                    "color": "LightGold",
+                    "visible": true,
+                    "initiallyFiltered": true,
+                    "laneType": "InteractionLane",
+                    "interactions": [
+                        {
+                            "source": "patient.interactions.Inter1",
+                            "visible": true,
+                            "attributes": [
+                                {
+                                    "id": "id",
+                                    "source": [
+                                        {
+                                            "path": "id",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{id}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "name": "Interaction ID",
+                                    "type": "num"
+                                },
+                                {
+                                    "id": "attr1",
+                                    "source": [
+                                        {
+                                            "path": "attr1",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{attr1}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "name": "Attr 1 of Inter 1",
+                                    "type": "text"
+                                },
+                                {
+                                    "id": "end",
+                                    "source": [
+                                        {
+                                            "path": "end",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{end}",
+                                        "values": []
+                                    },
+                                    "visible": false,
+                                    "plottable": false,
+                                    "name": "End",
+                                    "type": "datetime"
+                                },
+                                {
+                                    "id": "start",
+                                    "source": [
+                                        {
+                                            "path": "start",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{start}",
+                                        "values": []
+                                    },
+                                    "visible": false,
+                                    "plottable": false,
+                                    "name": "Start",
+                                    "type": "datetime"
+                                }
+                            ],
+                            "name": "Inter 1",
+                            "annotations": {
+                                "interaction_end": [
+                                    "end"
+                                ],
+                                "interaction_start": [
+                                    "start"
+                                ]
+                            }
+                        },
+                        {
+                            "source": "patient.interactions.Inter2",
+                            "visible": true,
+                            "attributes": [
+                                {
+                                    "id": "id",
+                                    "source": [
+                                        {
+                                            "path": "id",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{id}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "name": "Interaction ID",
+                                    "type": "num"
+                                },
+                                {
+                                    "id": "attr1",
+                                    "source": [
+                                        {
+                                            "path": "attr1",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{attr1}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": true,
+                                    "name": "Attr 1 of Inter 2",
+                                    "type": "num"
+                                },
+                                {
+                                    "id": "attr2",
+                                    "source": [
+                                        {
+                                            "path": "attr2",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{attr2}",
+                                        "values": []
+                                    },
+                                    "visible": true,
+                                    "plottable": false,
+                                    "name": "Attr 2 of Inter 2",
+                                    "type": "text"
+                                },
+                                {
+                                    "id": "end",
+                                    "source": [
+                                        {
+                                            "path": "end",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{end}",
+                                        "values": []
+                                    },
+                                    "visible": false,
+                                    "plottable": false,
+                                    "name": "End",
+                                    "type": "datetime"
+                                },
+                                {
+                                    "id": "start",
+                                    "source": [
+                                        {
+                                            "path": "start",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "formatter": {
+                                        "pattern": "{start}",
+                                        "values": []
+                                    },
+                                    "visible": false,
+                                    "plottable": false,
+                                    "name": "Start",
+                                    "type": "datetime"
+                                }
+                            ],
+                            "name": "Inter 2",
+                            "annotations": {
+                                "interaction_end": [
+                                    "end"
+                                ],
+                                "interaction_start": [
+                                    "start"
+                                ]
+                            }
+                        }
+                    ],
+                    "tilesHidden": false
+                }
+            ]
+        }
+    }
+}

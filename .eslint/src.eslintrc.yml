@@ -1,0 +1,12 @@
+# This is the reference file for strict linting of SAPUI5 files.
+# It should be referenced in an ".eslintrc" in any "ui" directory.
+---
+  extends: ./base.eslintrc.yml
+  env:
+    browser: true # browser global variables
+  globals:
+    d3: false # Used by d3.js
+    jQuery: false # Only allow jQuery without $
+    sap: false # SAPUI5
+  rules:
+    no-console: 2 # 2, disallow the use of console

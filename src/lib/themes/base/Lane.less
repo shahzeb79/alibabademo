@@ -1,0 +1,228 @@
+.sapTlTimelineLaneFamily {
+    // border-bottom: 1px solid @sapUiExtraLightBorder;
+    // height: 230px;
+}
+
+.sapTlTimelineLane {
+    display: flex;
+    position: relative;
+}
+
+.sapTlTimelineLanes {
+    margin-bottom: 1px;
+}
+
+.sapTlTimelineLaneFramed {
+    box-sizing: border-box;
+    height: @laneHeightNormal;
+    &.sapTlTimelineLaneMinimized {
+        height: @laneHeightMinimized;
+    }
+}
+
+.sapTlTimelineLaneHeader {
+    display: flex;
+    flex-shrink: 0;
+    width: @laneHeaderWidth;
+}
+
+.sapTlTimelineLaneFramed .sapTlTimelineLaneHeader {
+    border-top: 1px solid @sapUiExtraLightBorder;
+    border-bottom: 1px solid @sapUiExtraLightBorder;
+    border-left: 1px solid @sapUiExtraLightBorder;
+    background-color: @sapUiLightestBG;
+    box-sizing: border-box;
+    height: @laneHeightNormal + 1px;
+}
+
+.sapTlTimelineLaneFramed.sapTlTimelineLaneMinimized .sapTlTimelineLaneHeader {
+    height: @laneHeightMinimized + 1px;
+}
+
+.sapTlTimelineLaneBody {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.sapTlTimelineLaneFramed .sapTlTimelineLaneBody {
+    border-top: 1px solid @sapUiExtraLightBorder;
+    border-bottom: 1px solid @sapUiExtraLightBorder;
+    border-right: 1px solid @sapUiExtraLightBorder;
+    background-color: @sapUiLightestBG;
+    box-sizing: border-box;
+    height: @laneHeightNormal + 1px;
+}
+
+.sapTlTimelineLaneFramed.sapTlTimelineLaneMinimized .sapTlTimelineLaneBody {
+    height: @laneHeightMinimized + 1px;
+}
+
+.sapTlTimelineLaneDescription {
+    flex-grow: 1;
+    padding: .75rem .75rem 0 .75rem;
+    overflow: hidden;
+}
+
+.sapTlTimelineLaneDescriptionCount {
+    color: @sapPVLightestText;
+    font-size: 2.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sapTlTimelineLaneDescriptionTitle {
+    font-size: 0.875rem;
+    margin-top: -.3125rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.sapTlTimelineLaneHeaderContent {
+    flex-shrink: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sapTlTimelineLaneHeaderExtraContentSeparator {
+    flex-shrink: 0;
+    background-color: @sapUiLightBorder;
+    width: 1px;
+    margin-left: .125rem;
+    margin-top: .3125rem;
+    margin-bottom: .3125rem;
+}
+
+.sapTlTimelineLaneHeaderExtraContent {
+    flex-shrink: 0;
+    width: @laneHeaderExtraContentWidth;
+    height: 100%;
+    overflow: hidden;
+
+    .sapMBtn:hover > .sapMBtnInner {
+        color: @sapPVInverseText;
+    }
+
+    .sapTlTimelineLaneHeaderUndatedCount {
+        padding-top: 0;
+
+        > .sapMBtnInner {
+            border-width: 2px;
+            border-style: solid;
+            border-radius: .625rem;
+            display: inline-block;
+            font-size: .75rem;
+            font-weight: normal;
+            height: 1.25rem;
+            min-width: 1.25rem;
+            padding: .0625rem .3125rem .0625rem .3125rem;
+            transition: background-color .4s, color .4s;
+
+            .sapMBtnContent {
+                line-height: .875rem;
+            }
+        }
+    }
+}
+
+.sapUiSizeCozy .sapTlTimelineLaneHeaderContent {
+    .sapMBtn {
+        height: 2.375rem;
+        padding: 0;
+
+        .sapMBtnInner {
+            border: none;
+        }
+    }
+}
+
+.sapTlChartOverlay {
+	fill: none;
+	width: 100%;
+	height: 100%;
+}
+
+
+.sapTlTimelineLaneMinimized {
+
+    .sapTlTimelineLaneDescription {
+        display: flex;
+        align-items: center;
+        padding: .75rem .75rem .75rem .75rem;
+    }
+
+    .sapTlTimelineLaneDescriptionCount {
+        display: none;
+    }
+
+    .sapTlTimelineLaneDescriptionTitle {
+        margin-top: 0;
+    }
+}
+
+.sapTlTimelineLaneMinimized canvas {
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.sapTlTimelineLaneMinimized svg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    .focus > circle {
+        transform: scale(1.7);
+    }
+
+    .focusInit circle {
+        fill: @sapUiLightestBG;
+        transform: scale(1);
+    }
+
+    circle {
+        stroke-width: 1.5px;
+        cursor: pointer;
+        -webkit-transition: all .2s;
+        transition: all .2s;
+        fill: @sapUiLightestBG;
+
+        &:hover {
+            fill-opacity: 1;
+        }
+    }
+}
+
+.sapTlTimelineSubLanes .sapTlTimelineLaneHeader {
+    border-left-width: 3px;
+    border-left-style: solid;
+}
+
+#forEachColor(~".sapTlTimelineLaneDescription", ~" .sapTlTimelineLaneDescriptionTitle", color);
+#forEachColor(~".sapTlTimelineLaneMinimized", ~" circle", stroke);
+#forEachColor(~".sapTlTimelineLaneMinimized", ~" circle:hover", fill);
+#forEachColor(~".sapTlTimelineLaneMinimized", ~" .focus circle:hover", fill);
+#forEachColor(~".sapTlTimelineSubLanes", ~" .sapTlTimelineLaneHeader", border-left-color);
+
+#forEachColor(~".sapTlTimelineLaneHeaderExtraContent", ~" .sapTlTimelineLaneHeaderUndatedCount > .sapMBtnInner", border-color);
+#forEachColor(~".sapTlTimelineLaneHeaderExtraContent", ~" .sapTlTimelineLaneHeaderUndatedCount > .sapMBtnInner.sapMBtnActive", border-color);
+#forEachColor(~".sapTlTimelineLaneHeaderExtraContent", ~" .sapTlTimelineLaneHeaderUndatedCount > .sapMBtnInner", color);
+#forEachColor(~".sapTlTimelineLaneHeaderExtraContent", ~" .sapTlTimelineLaneHeaderUndatedCount:hover > .sapMBtnInner", background-color);
+
+// Compute focus colors which are theme colors mixed with background
+// We cannot use the forEachColor here as LESS functions are not executed if given in a string argument
+.generateFocusColors(@i: 1) when (@i <= length(@predefinedColors)) {
+    @name: extract(@predefinedColors, @i);
+    @unquoted: ~"@{name}";
+    .sapTlTimelineLaneMinimized@{unquoted} .focus circle {
+        @var: "sapPV@{name}";
+        fill: mix(@@var, @sapUiLightestBG, 30%);
+    }
+    .generateFocusColors((@i + 1));
+} .generateFocusColors;

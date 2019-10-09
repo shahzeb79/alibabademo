@@ -1,0 +1,103 @@
+{
+    "params": {
+        "configId": 123
+    },
+    "contentType": "application/json",
+    "statusCode": 200,
+    "content": {
+        "masterData": {
+            "attributes": {
+                "pid": [
+                    "2"
+                ],
+                "firstName": [
+                    "Carolyn"
+                ],
+                "lastName": [
+                    "Rodriguez"
+                ],
+                "street": [
+                    "1738 East Circle Apt. 28"
+                ],
+                "city": [
+                    "City",
+                    "Another City"
+                ],
+                "zipcode": [
+                    "91243"
+                ],
+                "region": [
+                    "NE"
+                ],
+                "dateOfBirth": [
+                    "1954-09-25T00:00:00.000Z"
+                ],
+                "dateOfDeath": [
+                    "2016-12-24T16:00:00.000Z"
+                ]
+            }
+        },
+        "interactionTypes": {
+            "patient.interactions.Inter1": [
+                {
+                    "attributes": {
+                        "id": [
+                            1
+                        ],
+                        "attr1": [
+                            "NoValue"
+                        ],
+                        "calYear": [
+                            2009
+                        ],
+                        "end": [
+                            "NoValue"
+                        ],
+                        "start": [
+                            "NoValue"
+                        ]
+                    }
+                },
+                {
+                    "attributes": {
+                        "id": [
+                            2
+                        ],
+                        "attr1": [
+                            "NoValue"
+                        ],
+                        "calYear": [
+                            2015
+                        ],
+                        "end": [
+                            "2015-02-05T00:00:00.000Z"
+                        ],
+                        "start": [
+                            "2015-02-05T00:00:00.000Z"
+                        ]
+                    }
+                },
+                {
+                    "attributes": {
+                        "id": [
+                            3
+                        ],
+                        "attr1": [
+                            "NoValue"
+                        ],
+                        "calYear": [
+                            2015
+                        ],
+                        "end": [
+                            "2015-02-06T00:00:00.000Z"
+                        ],
+                        "start": [
+                            "2015-02-06T00:00:00.000Z"
+                        ]
+                    }
+                }
+            ],
+            "patient.interactions.Inter2": []
+        }
+    }
+}

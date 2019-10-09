@@ -1,0 +1,6 @@
+# This is the reference file for strict linting of SAPUI5 files.
+# It should be referenced in an ".eslintrc" in any "ui" directory.
+---
+  extends: ./base.eslintrc.yml
+  env:
+    node: true # browser global variables

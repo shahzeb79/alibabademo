@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:patient="ps.app.ui.lib">
+    <patient:ConfigDialog title="{i18n>HPH_PAT_CONTENT_CONFIG_SELECTION_DIALOG_TITLE}" beforeClose=".onDialogClose">
+        <List includeItemInSelection="true" mode="SingleSelectLeft" items="{/configs}">
+            <StandardListItem description="{configId}" selected="{selected}" title="{configName}" />
+        </List>
+        <patient:footer>
+            <CheckBox selected="{/default}" text="{i18n>HPH_PAT_CONTENT_CONFIG_SELECTION_AS_DEFAULT}" />
+            <ToolbarSpacer />
+            <Button text="{i18n>HPH_PAT_CONTENT_BUTTON_OK}" press=".onConfigSelected" />
+            <Button text="{i18n>HPH_PAT_CONTENT_BUTTON_CANCEL}" press=".onClosePressed" />
+        </patient:footer>
+    </patient:ConfigDialog>
+</core:FragmentDefinition>
